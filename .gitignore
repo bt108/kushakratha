@@ -1,0 +1,5 @@
+# Ignore the epub folder
+epub/
+dev-data/
+pdf/
+*.log
