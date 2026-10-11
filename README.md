@@ -41,7 +41,7 @@ O Haril Having captured my mind, please free me from material bondage.
 make   # Markdown → EPUB in epub/ (one .epub per .md)
 ```
 
-Single-file equivalent (exact rule from `makefile`, verified):
+Single-file equivalent (same rule as `makefile`):
 
 ```sh
 pandoc -t epub3 --css ./config/epub.css --template=./config/template.epub3 \
@@ -87,8 +87,8 @@ epub/Bhaktivinoda_Thakura_Jaiva_Dharma.epub   # ~1.3 MB source, the main work
 - `make` — drives the build.
 - `python3` — runs the `scripts/*.py` cleanup helpers (stdlib only).
 - `tesseract` with an IAST-trained data file — only needed to OCR new
-  scans (`parallel -j4 tesseract {} {.} -l IAST ::: *.tif`); **not**
-  installed in this environment and **not** needed to build the EPUBs.
+  scans (`parallel -j4 tesseract {} {.} -l IAST ::: *.tif`); not
+  needed to build the EPUBs.
 
 ## Commands
 
@@ -98,7 +98,7 @@ make clean          # remove built EPUBs
 make debug          # print SRC/DST paths and list source files
 ```
 
-Useful shell from the old notes (needs `tesseract` + scanned PDFs/TIFFs):
+To OCR new scans (needs `tesseract` + scanned PDFs/TIFFs):
 
 ```sh
 parallel -j4 pdftoppm -tiff {} {.}_page ::: *.pdf
@@ -122,14 +122,11 @@ OCR scan → page glue → auto-fix → artifact hunt → structure markup → E
   `syn_emconv.py` semi-automatically converts `-` to `—`.
 - **Verses** — `scripts/verse_quote.py` detects verses, adds blockquote
   `>` markup and flags candidates; `verse_glue.py` joins wrapped verse
-  lines (never across verse boundaries); `header_mark` (planned) logs
-  headers once verses are marked.
+  lines (never across verse boundaries).
 - **Prose** — `scripts/prose_glue.py` collapses newlines in prose
   paragraphs (run only after headers and verses are marked).
 - **Build** — `makefile`: `pandoc -t epub3` with `config/epub.css`,
   `config/template.epub3`, `config/metadata.yaml` → `epub/*.epub`.
-  (`scripts/tokobo.sh` is a personal ereader-upload helper, not part of
-  the build.)
 
 ## Editorial policy
 
