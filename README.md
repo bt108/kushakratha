@@ -10,17 +10,6 @@ under the Krishna Institute / Krishna Library imprint. This repo OCRs those
 editions, cleans them to IAST standard, and builds one EPUB per work with
 Pandoc — for readers, and editors continuing the cleanup.
 
-## Provenance and rights notice
-
-The translations are by Kuśakratha Dāsa; biography and reminiscences in
-`markdown/memory.md` (Chakra.org posts, Krishna Institute memorial).
-`config/metadata.yaml` claims `Creative Commons
-Attribution-NonCommercial-NoDerivatives 3.0 Unported` for the EPUBs —
-**that is a claim in the config, unverified**. Per his will, his books are
-given away for free, not sold. **Public release still needs the owner's
-translation-rights confirmation** — this repo stays private until that is
-obtained.
-
 ## 30-second example
 
 Smallest work (`markdown/Bhaktivinoda_Thakura_Explanation_of_the_Mahamantra.md`):
@@ -137,12 +126,7 @@ OCR scan → page glue → auto-fix → artifact hunt → structure markup → E
 3. Log non-trivial corrections in `CHANGELOG.md` (next `## Change N`:
    type, confidence, original/revised, notes).
 4. Verify with `make` (full build must exit 0) before pushing.
-5. Do not change visibility: this repo stays **private** until
-   translation-rights confirmation (see Provenance notice).
 
 ## License and credits
 
-No LICENSE yet — rights unresolved (see Provenance notice). Translations:
-Kuśakratha Dāsa (Krishna Institute). Tooling: `bt108`. Fonts: Charis SIL
-(OFL). Reminiscences by their named authors (Puskara, Viśoka,
-Mahā-saumya Dāsas and others).
+Translations: Kuśakratha Dāsa (Krishna Institute); EPUB tooling: `bt108`; fonts: Charis SIL (OFL); reminiscences by their named authors.
